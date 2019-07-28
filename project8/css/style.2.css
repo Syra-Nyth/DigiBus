@@ -1,0 +1,178 @@
+html {
+    font-family: 'Times New Roman';
+    background-color: #fffff4;
+    color: #1e183a;
+}
+
+/* ################ HEADER ################ */
+header {
+    background-color: #fae7da;
+}
+
+header img {
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+span {
+    line-height: 150px;
+    color: #1e1831;
+}
+
+h1 {
+    font-size: 2.5em; 
+    color:#2b2727; 
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 2.25em;
+    color: #2b2727;
+    text-decoration: underline;
+    margin-bottom: 15px;
+    line-height: 150px;
+}
+
+h3 {
+    font-size: 1.15em;
+    text-decoration: underline;
+    margin-bottom: 8px;
+}
+
+body {
+    font-size: 1em; 
+    color:#332d2de7; 
+    text-align: center;
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* ################ MAIN ################*/
+main {
+    background-color: #dafae7;
+    padding: 20px;
+    display: inline-grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 3fr 3fr 1fr;
+    grid-template:
+    ". h img1 ."
+    ". img2 p1 ."
+    ". p2 img3 ."
+    ". img4 p3 ."
+    ". p4 img5 ."
+    ". img6 p5 ."
+}
+
+#h {
+    grid-area: h;
+    align-self: center;
+}
+
+#p1 {
+    grid-area: p1;
+    text-align: right;
+}
+
+#p2 {
+    grid-area: p2;
+    text-align: left;
+}
+
+#p3 {
+    grid-area: p3;
+    text-align: right;
+}
+
+#p4 {
+    grid-area: p4;
+    text-align: left;
+}
+
+#p5 {
+    grid-area: p5;
+    text-align: right;
+}
+
+#img1 {
+    grid-area: img1;
+    float: left;
+}
+
+#img2 {
+    grid-area: img2;
+    float: right;
+}
+
+#img3 {
+    grid-area: img3;
+    float: left;
+}
+
+#img4 {
+    grid-area: img4;
+    float: right;
+}
+
+#img5 {
+    grid-area: img5;
+    float: left;
+}
+
+#img6 {
+    grid-area: img6;
+    float: right;
+}
+
+p {
+    font-size: 1em; 
+    color:#332d2de7; 
+    text-align:left;
+    margin-bottom: 5px;
+}
+
+img {
+    height: 150px;
+}
+
+div {
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* ################ NAVIGATION ################ */
+nav {
+    background-color: #e7dafa;
+    text-align: center;
+    line-height: 75px;
+    border-radius: 5px;
+}
+
+nav a {
+    background-color: #e7dafa;
+    color: #000000;
+    text-decoration: underline;
+    text-decoration-color: #000000;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 1.5em;
+}
+
+nav a:visited {
+    background-color: #ddc8fd;
+}
+
+nav a:hover {
+    background-color: #cec0e4;
+}
+
+/* ################ FOOTER ################ */
+footer {
+    font-size: 1.25em;
+    text-align: center;
+    padding: 10px;
+}

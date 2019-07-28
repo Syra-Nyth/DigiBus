@@ -1,0 +1,120 @@
+html {
+    font-family: 'Moderne Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+    background-color: #bfdad4;
+    color: #1e183a;
+}
+
+/* ################ HEADER ################ */
+header {
+    background-color: #a7c79fbd;
+    border-radius: 10px;
+    padding: 30px;
+    color: #292525e7;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+header img {
+    height: 60px;
+}
+
+h1 {
+    font-size:64px; 
+    color:#2b2727; 
+}
+
+h2 {
+    font-size: 1.25em;
+    color: #2b2727;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.15em;
+    margin-bottom: 8px;
+}
+
+/* ################ MAIN ################ */
+body {
+    font-size: 1em; 
+    color:#332d2de7; 
+    text-align:center;
+}
+
+p {
+    font-size: 1em; 
+    color:#332d2de7; 
+    text-align:center;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+#form {
+    width:320px; 
+    text-align:center; 
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#form-title {
+    background-color: #a7c79fbd;
+    color: #303030;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+span {
+    background-color: #098675;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* ################ NAV ################ */
+nav {
+    text-align: center;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+    background-color: #71cedf;
+    padding: 10px;
+    color: #ffffff;
+}
+
+nav a {
+    background-color: #c5cfac;
+    color: #2b2727;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: block;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    transition: width 2s, height 2s, transform 2s;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #456567;
+    margin-top: 20px;
+}
+
+.dropdown:hover {
+    transform: rotate(720deg);
+}
+  
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ################ FOOTER */
+footer {
+    text-align: center;
+}

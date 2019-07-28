@@ -1,0 +1,45 @@
+/* Author: Katherine Rutter */
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* ######## Computer Layout ######## */
+@media screen and (min-width: 999px) {
+    body {
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: 1fr 8fr 1fr;
+        grid-template: 
+        "nav nav nav"
+        ". header ."
+        ". main ."
+        ". footer .";
+    }
+}
+
+/* ######## Mobile Layout ######## */
+@media screen and (max-width: 999px) {
+    body {
+        margin: 40px;
+        display: grid;
+        grid-gap: 10px;
+        grid-template-columns: 14fr;
+        grid-template: 
+        "nav"
+        "header"
+        "main"
+        "footer";
+        }
+}

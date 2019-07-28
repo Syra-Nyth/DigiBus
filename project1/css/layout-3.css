@@ -1,0 +1,25 @@
+body {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: 170px 150px 120px;
+    grid-template-areas: 
+    "nav header"
+    "nav main"
+    "footer main";
+}
+
+header {
+    grid-area: header;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}

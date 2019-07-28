@@ -1,0 +1,109 @@
+html {
+    font-family: 'Times New Roman';
+    background-color: #e4e4e4;
+    color: #1e183a;
+}
+
+/* ############ Header ############ */
+header {
+    background-color: #c0c0c0;
+    border-radius: 20px;
+    color: #292525e7;
+    text-align: center;
+    font-size: 3em;
+    text-transform: capitalize;
+    font-family: 'Rockwell';
+}
+
+header img {
+    height: 150px;
+    float: left;
+    line-height: 150px;
+}
+
+span {
+    line-height: 150px;
+    color: #1e1831;
+}
+
+span:visited {
+    color: #1e183a;
+}
+
+/* ############ Headings ############ */
+h1 {
+    font-size: 2.3em; 
+    color:#2b2727; 
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.25em;
+    color: #2b2727;
+    text-decoration: underline;
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.15em;
+    text-decoration: underline;
+    margin-bottom: 8px;
+}
+
+/* ############ Main Content ############ */
+body {
+    font-size: 1em; 
+    color:#332d2de7; 
+    text-align: left;
+    margin-bottom: 1em;
+}
+
+main {
+    background-color: #52adcb;
+    padding: 20px;
+}
+
+p {
+    font-size: 1em; 
+    color:#332d2de7; 
+    margin-bottom: 5px;
+}
+
+div {
+    width:320px; 
+    text-align:center; 
+    margin-left:auto;
+    margin-right:auto;
+}
+
+/* ############ Navigation ############ */
+nav {
+    text-align: center;
+    background-color: #c0c0c0;
+    border-radius: 20px;
+    line-height: 150px;
+}
+
+nav a {
+    background-color: #66cc00;
+    color: #ffffff;
+    font-size: 1.5em;
+    border-radius: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+nav a:visited {
+    background-color: #5bb401;
+}
+
+nav a:hover {
+    background-color: #000000;
+}
+
+/* ############ Footer ############ */
+footer {
+    text-align: center;
+}
