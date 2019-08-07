@@ -1,16 +1,25 @@
 $(function() {
-    let list = []
+    let todoList = []
 
-    $(`#btnAddItem`).click(function() {
-        let item = prompt(`Item: `)
+    $(`#btnAddTask`).click(function() {
+        // get an item from the user
+        let task = $(`#txtTask`).val()
 
-        list.push(item)
+        // add the item to the list
+        todoList.push(task)
 
-    })
+    }) // end button
     
     $(`#btnPrintList`).click(function() {
-        alert(list)
+        // start the list fresh
+        $(`#lstTodoList`).empty()
 
-    })
+        // for every list item add a <li>
+        todoList.forEach(function(value, index) {
+            $(`#lstTodoList`).append(`<li>Task Number ${index}: ${value}</li>`)
 
-})
+        })
+
+    }) // end button
+
+}) // end script

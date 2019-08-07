@@ -5,7 +5,10 @@
     <head>
         <title>To-Do List</title>
         <meta charset="utf-8">
-        <script
+        <link rel="stylesheet" type="text/css" href="./css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/layout.css">
+<script
   src="http://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
@@ -13,10 +16,13 @@
     </head>
 
     <body>
-        <input id="txtInput"></input>
-        <button id="btnAddItem">Add Item</button>
+        <h3>To-Do List</h3>
+        <label for="txtTask">Task:</label>
+        <input id="txtTask"></input>
+        <button id="btnAddTask">Add Task</button>
+
         <button id="btnPrintList">Print List</button>
-        <div id="txtOutput"></div>
+        <ul id="lstTodoList"></ul>
 
     </body>
 
