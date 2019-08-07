@@ -8,6 +8,8 @@ $(function() {
         // add the item to the list
         list.push(task)
 
+        // update list when finished
+        updateList()
     }) // end button
     
 
@@ -20,10 +22,13 @@ $(function() {
         // starting at index delete 1 task
         list.splice(index, 1)
 
+        // update list when finished
+        updateList()
     }) // end button
 
 
-    $(`#btnPrintList`).click(function() {
+    // function for updating the list
+    function updateList() {
         // start the list fresh
         $(`#lstTodoList`).empty()
 
@@ -33,6 +38,6 @@ $(function() {
 
         })
 
-    }) // end button
+    } // end button
 
 }) // end script
