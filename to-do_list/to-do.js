@@ -28,6 +28,13 @@ $(function() {
         updateList()
     }) // end button
 
+    $(`#btnCompleteTask`).click(function() {
+        let index = $(`#numCompleteTask`).val()
+        index = parseInt(index)
+        list[index].completed = true
+        updateList()
+    })
+
     // function for updating the list
     function updateList() {
         // start the list fresh
@@ -35,7 +42,7 @@ $(function() {
 
         // for every list item add a <li>
         list.forEach(function(value, index) {
-            $(`#lstTodoList`).append(`<li>Task Number ${index}: ${value.description} --> Due: ${value.dueDate.toDateString()}</li>`)
+            $(`#lstTodoList`).append(`<li>Task Number ${index}: ${value.description} --> Due: ${value.dueDate.toDateString()} --> Complete: ${value.completed}</li>`)
         }) // end forEach
 
     } // end button
