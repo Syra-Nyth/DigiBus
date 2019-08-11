@@ -3,8 +3,10 @@ $(function() {
 
     $(`#btnAddTask`).click(function() {
         // get an item from the user
-        let task = $(`#txtTask`).val()
-
+        let task = {}
+        task.description = $(`#txtTaskDescription`).val()
+        task.priority = parseInt($(`#numTaskPriority`).val())
+        task.dueDate = new Date($(`#datTaskDueDate`).val())
         // add the item to the list
         list.push(task)
 
@@ -26,7 +28,6 @@ $(function() {
         updateList()
     }) // end button
 
-
     // function for updating the list
     function updateList() {
         // start the list fresh
@@ -34,9 +35,8 @@ $(function() {
 
         // for every list item add a <li>
         list.forEach(function(value, index) {
-            $(`#lstTodoList`).append(`<li>Task Number ${index}: ${value}</li>`)
-
-        })
+            $(`#lstTodoList`).append(`<li>Task Number ${index}: ${value.description} --> Due: ${value.dueDate.toDateString()}</li>`)
+        }) // end forEach
 
     } // end button
 
