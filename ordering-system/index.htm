@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Ordering System</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script
+  src="http://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <script src="./ordering.js"></script>
+  
+</head>
+
+<body>
+  <header>
+    <h1>Ordering System</h1>
+  </header>
+
+  <main>
+
+    <!-- ################ CUSTOMER ################ -->
+    <section id="customer">
+      <h2>Customer</h2>
+
+      <label for="txtCustName">Name:</label>
+      <input id="txtCustName" type="text">
+    </section>
+
+    <!-- ################ MILK ################ -->
+    <section id="milk">
+      <h2>Milk</h2>
+
+      <input id="radMilkRegular" type="radio" name="milk-type">
+      <label for="radMilkRegular">Regular</label>
+      <br>
+      <input id="radMilkAlmond" type="radio" name="milk-type">
+      <label for="radMilkAlmond">Almond (+$0.50 per smoothie)</label>
+    </section>
+
+    <!-- ################ MENU ################ -->
+    <section id="menu">
+      <h2>Menu</h2>
+
+      <ul id="lstMenuList">
+        <li>
+          <input id="chkStrawberry" type="checkbox">
+          <label for="chkStrawberry">Strawberry ($5)</label>
+        </li>
+        <li>
+          <input id="chkBlueberry" type="checkbox">
+          <label for="chkBlueberry">Blueberry ($5)</label>
+        </li>
+        <li>
+          <input id="chkRaspberry" type="checkbox">
+          <label for="chkRaspberry">Raspberry ($5)</label>
+        </li>
+        <li>
+          <input id="chkMango" type="checkbox">
+          <label for="chkMango">Mango ($5)</label>
+        </li>
+        <li>
+          <input id="chkBanana" type="checkbox">
+          <label for="chkBanana">Banana ($5)</label>
+        </li>
+        <li>
+          <input id="chkPineapple" type="checkbox">
+          <label for="chkPineapple">Pineapple ($5)</label>
+        </li>
+        <li>
+          <input id="chkCoconut" type="checkbox">
+          <label for="chkCoconut">Coconut ($7.50)</label>
+        </li>
+        <li>
+          <input id="chkGoji" type="checkbox">
+          <label for="chkGoji">Goji ($7.50)</label>
+        </li>
+        <li>
+          <input id="chkPomegranate" type="checkbox">
+          <label for="chkPomegranate">Pomegranate ($7.50)</label>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ################ ORDERS ################ -->
+    <section id="orders">
+      <h2>Orders</h2>
+
+      <ul id="lstOrdersList">
+
+      </ul>
+    </section>
+
+    <!-- ################ CREATE ################ -->
+    <section id="create">
+      <button id="btnCreateOrder">Create Order</button>
+    </section>
+
+    <!-- ################ REMOVE ################ -->
+    <section id="remove">
+      <label for="numOrderNum">Order #</label>
+      <input id="numOrderNum" type="number">
+      <button id="btnRemoveOrder">Remove Order</button>
+    </section>
+
+  </main>
+
+</body>
+
+
+</html>
