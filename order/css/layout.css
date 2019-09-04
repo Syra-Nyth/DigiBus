@@ -1,0 +1,34 @@
+main {
+  display: grid;
+  grid-gap: 15px;
+  grid-template-columns: 1fr 2fr 2fr 1fr;
+  grid-template-areas:
+  '.   customer   orders    .'
+  '.   milk       orders    .'
+  '.   menu       orders    .'
+  '.   create     remove    .';
+}
+
+#customer {
+  grid-area: customer;
+}
+
+#milk {
+  grid-area: milk;
+}
+
+#menu {
+  grid-area: menu;
+}
+
+#orders {
+  grid-area: orders;
+}
+
+#create {
+  grid-area: create;
+}
+
+#remove {
+  grid-area: remove;
+}
