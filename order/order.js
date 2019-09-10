@@ -8,7 +8,7 @@ $(function () {
     $(`#btnCreateOrder`).click(function () {
         // create an object for the order
         let order = {}
-        order.custName = ``,
+            order.custName = ``,
             order.milkType = ``,
             order.items = [],
             order.totalCost = ``
@@ -18,7 +18,12 @@ $(function () {
 
         // get the customer's name from the webpage
         let name = $(`#txtCustName`).val()
-        // let 'custName' in the order be 'name'
+        // if there's no input
+        if (name === ``) {
+            // alert no name
+            alert(`You have not given a name. Please try again.`)
+        } else {
+            // let 'custName' in the order be 'name'
             order.custName = (name)
 
             // start the total cost at 0
@@ -159,16 +164,39 @@ $(function () {
             // ################ COST ################
 
 
-            // let 'totalCost' in the order be the total cost
-            order.totalCost = (`$${totalCost}`)
+            // if the milk type is undefined
+            if (order.milkType.length === 0) {
+                // alert no milk
+                alert(`You have not chosen a milk type. Please try again.`)
+                // empty the order list
+                emptyList()
+            } 
+            // else if no smoothie flavours are selected
+            else if (items === 0) {
+                // alert no items
+                alert(`You have not chosen any smoothies flavours. Please try again.`)
+                // empty the order list
+                emptyList()
+            } 
+            // otherwise
+            else {
+                // let 'totalCost' in the order be the total cost
+                order.totalCost = (`$${totalCost}`)
 
-            // push the order to the order list
-            orderList.push(order)
-            // update the order list
-            updateOrders()
-            
+                // push the order to the order list
+                orderList.push(order)
+                // update the order list
+                updateOrders()
+            } // end else
 
+        } // end else
     }) // end button
+
+    // to empty the list
+    function emptyList() {
+        // clear the order list
+        orderList.length = 0
+    }
 
 
     // ################ UPDATE ORDERS ################
