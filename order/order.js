@@ -8,7 +8,8 @@ $(function () {
     $(`#btnCreateOrder`).click(function () {
         // create an object for the order
         let order = {}
-            order.custName = ``,
+            // let 'custName' in the order be taken from the customer
+            order.custName = $(`#txtCustName`).val(),
             order.milkType = ``,
             order.items = [],
             order.totalCost = ``
@@ -16,15 +17,11 @@ $(function () {
         // ################ NAME ################
 
 
-        // get the customer's name from the webpage
-        let name = $(`#txtCustName`).val()
-        // if there's no input
-        if (name === ``) {
-            // alert no name
-            alert(`You have not given a name. Please try again.`)
+        // if there's no input or if the name is over 35 characters long
+        if (order.custName === `` || order.custName.length >= 35) {
+            // alert wrong name
+            alert(`You have not given a proper name. Please try again.`)
         } else {
-            // let 'custName' in the order be 'name'
-            order.custName = (name)
 
             // start the total cost at 0
             let totalCost = 0
@@ -228,10 +225,16 @@ $(function () {
         let index = $(`#numOrderNum`).val()
         // convert the task number to a number
         index = parseInt(index)
+        // if the number is below zero
+        if (index < 0) {
+            // alert that the number is too small.
+            alert(`Order number is too small to remove. Please try again.`)
+        } else{
         // starting at index delete 1 task
         orderList.splice(index, 1)
         // update list when finished
         updateOrders()
+        } // end else
     }) // end button
 
 })
