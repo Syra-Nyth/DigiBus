@@ -1,6 +1,32 @@
 // when the webpage loads
 $(function () {
 
+    const menu = [
+        `Strawberry($5)`,
+        `Blueberry($5)`,
+        `Raspberry($5)`,
+        `Mango($5)`,
+        `Banana($5)`,
+        `Pineapple($5)`,
+        `Coconut($7.50)`,
+        `Goji($7.50)`,
+        `Pomegranate($7.50)`
+    ]
+    updateMenu()
+
+    function updateMenu() {
+        // empty the menu list
+        $(`#lstMenuList`).empty()
+        
+        // for each value in the menu...
+        menu.forEach( function (value, index) {
+            // append each item to the menu list as a list item
+            $(`#lstMenuList`).append(`<li><input id="chk${index}" type="checkbox"><label for="chk${index}">${value}</label></li>`)
+        }) // end forEach 
+
+    } // end function
+
+
     // create an array for the order list
     let orderList = []
 
@@ -34,7 +60,7 @@ $(function () {
 
 
             // if the strawberry checkbox is checked
-            if ($(`#chkStrawberry`).prop(`checked`)) {
+            if ($(`#chk0`).prop(`checked`)) {
                 // let straw be Strawberry
                 let straw = (`Strawberry,5`)
                 // push the smoothie flavour to the order
@@ -45,7 +71,7 @@ $(function () {
                 items++
             }
             // if the blueberry checkbox is checked
-            if ($(`#chkBlueberry`).prop(`checked`)) {
+            if ($(`#chk1`).prop(`checked`)) {
                 // let blue be Blueberry
                 let blue = (`Blueberry,5`)
                 // push the smoothie flavour to the order
@@ -56,7 +82,7 @@ $(function () {
                 items++
             }
             // if the raspberry checkbox is checked
-            if ($(`#chkRaspberry`).prop(`checked`)) {
+            if ($(`#chk2`).prop(`checked`)) {
                 // let rasp be Raspberry
                 let rasp = (`Raspberry,5`)
                 // puch the smoothie flavour to the order
@@ -67,7 +93,7 @@ $(function () {
                 items++
             }
             // if the mango checkbox is checked
-            if ($(`#chkMango`).prop(`checked`)) {
+            if ($(`#chk3`).prop(`checked`)) {
                 // let mango be Mango
                 let mango = (`Mango,5`)
                 // push the smoothie flavour to the order
@@ -78,7 +104,7 @@ $(function () {
                 items++
             }
             // if the banana checkbox is checked
-            if ($(`#chkBanana`).prop(`checked`)) {
+            if ($(`#chk4`).prop(`checked`)) {
                 // let bana be Banana
                 let bana = (`Banana,5`)
                 // push the smoothie flavour to the order
@@ -89,7 +115,7 @@ $(function () {
                 items++
             }
             // if the pineapple checkbox is checked
-            if ($(`#chkPineapple`).prop(`checked`)) {
+            if ($(`#chk5`).prop(`checked`)) {
                 // let pine be Pineapple
                 let pine = (`Pineapple,5`)
                 // push the smoothie flavour to the order
@@ -100,7 +126,7 @@ $(function () {
                 items++
             }
             // if the coconut checkbox is checked
-            if ($(`#chkCoconut`).prop(`checked`)) {
+            if ($(`#chk6`).prop(`checked`)) {
                 // let coco be Coconut
                 let coco = (`Coconut,7.50`)
                 // push the smoothie flavour to the order
@@ -111,7 +137,7 @@ $(function () {
                 items++
             }
             // if the goji checkbox is checked
-            if ($(`#chkGoji`).prop(`checked`)) {
+            if ($(`#chk7`).prop(`checked`)) {
                 // let goji be Goji
                 let goji = (`Goji,7.50`)
                 // push the smoothie flavour to the order
@@ -122,7 +148,7 @@ $(function () {
                 items++
             }
             // if the pomegranate checkbox is checked
-            if ($(`#chkPomegranate`).prop(`checked`)) {
+            if ($(`#chk8`).prop(`checked`)) {
                 // let pome be Pomegranate
                 let pome = (`Pomegranate,7.50`)
                 // push the smoothie flavour to the order
