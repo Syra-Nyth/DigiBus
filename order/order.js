@@ -115,7 +115,7 @@ $(function () {
                 emptyList()
             } 
             // else if no smoothie flavours are selected
-            else if (items === 0) {
+            else if (order.items.length === 0) {
                 // alert no items
                 alert(`You have not chosen any smoothies flavours. Please try again.`)
                 // empty the order list
