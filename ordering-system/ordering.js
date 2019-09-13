@@ -2,16 +2,29 @@
 $(function () {
 
     const menu = [
-        `Strawberry($5)`,
-        `Blueberry($5)`,
-        `Raspberry($5)`,
-        `Mango($5)`,
-        `Banana($5)`,
-        `Pineapple($5)`,
-        `Coconut($7.50)`,
-        `Goji($7.50)`,
-        `Pomegranate($7.50)`
+        `Strawberry`,
+        `Blueberry`,
+        `Raspberry`,
+        `Mango`,
+        `Banana`,
+        `Pineapple`,
+        `Coconut`,
+        `Goji`,
+        `Pomegranate`
     ]
+
+    const prices = [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        7.5,
+        7.5,
+        7.5
+    ]
+    
     updateMenu()
 
     function updateMenu() {
@@ -21,12 +34,13 @@ $(function () {
         // for each value in the menu...
         menu.forEach( function (value, index) {
             // append each item to the menu list as a list item
-            $(`#lstMenuList`).append(`<li><input id="chk${index}" type="checkbox"><label for="chk${index}">${value}</label></li>`)
+            $(`#lstMenuList`).append(`<li><input id="chk${index}" type="checkbox"><label for="chk${index}">${value} ($${prices[index]})</label></li>`)
+
         }) // end forEach 
 
     } // end function
 
-    
+
     // create an array for the order list
     let orderList = []
 
@@ -52,119 +66,23 @@ $(function () {
             // start the total cost at 0
             let totalCost = 0
 
-            // start the count of smoothies at 0
-            let items = 0
 
-
-            // ################ SMOOTHIES ################
-
-
-            // if the strawberry checkbox is checked
-            if ($(`#chk0`).prop(`checked`)) {
-                // let straw be Strawberry
-                let straw = (`Strawberry,5`)
+            menu.forEach( function (value, index) {
+                // if the index check is checked
+                if ($(`#chk${index}`).prop(`checked`)) {
                 // push the smoothie flavour to the order
-                order.items.push(straw)
+                order.items.push(` ${value},${prices[index]}`)
                 // add the smoothie cost to the total cost
-                totalCost = totalCost + 5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the blueberry checkbox is checked
-            if ($(`#chk1`).prop(`checked`)) {
-                // let blue be Blueberry
-                let blue = (`Blueberry,5`)
-                // push the smoothie flavour to the order
-                order.items.push(blue)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the raspberry checkbox is checked
-            if ($(`#chk2`).prop(`checked`)) {
-                // let rasp be Raspberry
-                let rasp = (`Raspberry,5`)
-                // puch the smoothie flavour to the order
-                order.items.push(rasp)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the mango checkbox is checked
-            if ($(`#chk3`).prop(`checked`)) {
-                // let mango be Mango
-                let mango = (`Mango,5`)
-                // push the smoothie flavour to the order
-                order.items.push(mango)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the banana checkbox is checked
-            if ($(`#chk4`).prop(`checked`)) {
-                // let bana be Banana
-                let bana = (`Banana,5`)
-                // push the smoothie flavour to the order
-                order.items.push(bana)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the pineapple checkbox is checked
-            if ($(`#chk5`).prop(`checked`)) {
-                // let pine be Pineapple
-                let pine = (`Pineapple,5`)
-                // push the smoothie flavour to the order
-                order.items.push(pine)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the coconut checkbox is checked
-            if ($(`#chk6`).prop(`checked`)) {
-                // let coco be Coconut
-                let coco = (`Coconut,7.50`)
-                // push the smoothie flavour to the order
-                order.items.push(coco)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 7.5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the goji checkbox is checked
-            if ($(`#chk7`).prop(`checked`)) {
-                // let goji be Goji
-                let goji = (`Goji,7.50`)
-                // push the smoothie flavour to the order
-                order.items.push(goji)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 7.5
-                // add one to the count of smoothies
-                items++
-            }
-            // if the pomegranate checkbox is checked
-            if ($(`#chk8`).prop(`checked`)) {
-                // let pome be Pomegranate
-                let pome = (`Pomegranate,7.50`)
-                // push the smoothie flavour to the order
-                order.items.push(pome)
-                // add the smoothie cost to the total cost
-                totalCost = totalCost + 7.5
-                // add one to the count of smoothies
-                items++
-            }
+                totalCost += prices[index]
+                }
+            })
 
 
             // ################ MILK ################
 
 
             // let almMilkPrice be the number of smoothies timesed by 0.5
-            let almMilkPrice = items * .5
+            let almMilkPrice = order.items.length * .5
 
             // if the regular milk rad is checked
             if ($(`#radMilkRegular`).prop(`checked`)) {
@@ -180,7 +98,7 @@ $(function () {
                 // let 'milkType' in the order be 'milk'
                 order.milkType = milk
                 // let the almMilkPrice be added to the total cost
-                totalCost = totalCost + almMilkPrice
+                totalCost += almMilkPrice
             }
 
 
@@ -195,7 +113,7 @@ $(function () {
                 emptyList()
             } 
             // else if no smoothie flavours are selected
-            else if (items === 0) {
+            else if (order.items.length === 0) {
                 // alert no items
                 alert(`You have not chosen any smoothies flavours. Please try again.`)
                 // empty the order list
