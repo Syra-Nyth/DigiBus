@@ -1,3 +1,4 @@
+// I FUCKED UP SO BAD I NEED TO WIPE SOMETHING SO THAT IT CAN'T BE SEEN AS EASILY
 // when the webpage loads
 $(function () {
 
