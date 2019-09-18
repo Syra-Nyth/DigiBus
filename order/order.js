@@ -30,9 +30,9 @@ $(function () {
     function updateMenu() {
         // empty the menu list
         $(`#lstMenuList`).empty()
-        
+
         // for each value in the menu...
-        menu.forEach( function (value, index) {
+        menu.forEach(function (value, index) {
             // append each item to the menu list as a list item
             $(`#lstMenuList`).append(`<li><input id="chk${index}" type="checkbox"><label for="chk${index}">${value} ($${prices[index]})</label></li>`)
         }) // end forEach 
@@ -47,8 +47,8 @@ $(function () {
     $(`#btnCreateOrder`).click(function () {
         // create an object for the order
         let order = {}
-            // let 'custName' in the order be taken from the customer
-            order.custName = $(`#txtCustName`).val(),
+        // let 'custName' in the order be taken from the customer
+        order.custName = $(`#txtCustName`).val(),
             order.milkType = ``,
             order.items = [],
             order.totalCost = ``
@@ -69,13 +69,13 @@ $(function () {
             // ################ SMOOTHIES ################
 
 
-            menu.forEach( function (value, index) {
+            menu.forEach(function (value, index) {
                 // if the index check is checked
                 if ($(`#chk${index}`).prop(`checked`)) {
-                // push the smoothie flavour to the order
-                order.items.push(` ${value},${prices[index]}`)
-                // add the smoothie cost to the total cost
-                totalCost += prices[index]
+                    // push the smoothie flavour to the order
+                    order.items.push(` ${value},${prices[index]}`)
+                    // add the smoothie cost to the total cost
+                    totalCost += prices[index]
                 }
             })
 
@@ -111,16 +111,12 @@ $(function () {
             if (order.milkType.length === 0) {
                 // alert no milk
                 alert(`You have not chosen a milk type. Please try again.`)
-                // empty the order list
-                emptyList()
-            } 
+            }
             // else if no smoothie flavours are selected
             else if (order.items.length === 0) {
                 // alert no items
                 alert(`You have not chosen any smoothies flavours. Please try again.`)
-                // empty the order list
-                emptyList()
-            } 
+            }
             // otherwise
             else {
                 // let 'totalCost' in the order be the total cost
@@ -134,12 +130,6 @@ $(function () {
 
         } // end else
     }) // end button
-
-    // to empty the list
-    function emptyList() {
-        // clear the order list
-        orderList.length = 0
-    }
 
 
     // ################ UPDATE ORDERS ################
@@ -175,11 +165,11 @@ $(function () {
         if (index < 0) {
             // alert that the number is too small.
             alert(`Order number is too small to remove. Please try again.`)
-        } else{
-        // starting at index delete 1 task
-        orderList.splice(index, 1)
-        // update list when finished
-        updateOrders()
+        } else {
+            // starting at index delete 1 task
+            orderList.splice(index, 1)
+            // update list when finished
+            updateOrders()
         } // end else
     }) // end button
 
