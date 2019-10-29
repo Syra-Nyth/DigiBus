@@ -1,21 +1,17 @@
 html {
     font-family: 'Moderne Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
-    background-color: #bfdad4;
+    background-color: #f2f4f4;
     color: #1e183a;
 }
 
 /* ################ HEADER ################ */
 header {
-    background-color: #a7c79fbd;
+    background-color: #e3dafd;
     border-radius: 10px;
     padding: 30px;
     color: #292525e7;
     text-align: center;
     font-size: 1.5em;
-}
-
-header img {
-    height: 60px;
 }
 
 h1 {
@@ -65,8 +61,8 @@ p {
 }
 
 span {
-    background-color: #098675;
-    color: #ffffff;
+    background-color: #e7f5f0;
+    color: #666565;
     text-align: center;
     padding: 10px;
     border-radius: 5px;
@@ -78,7 +74,7 @@ nav {
     border-radius: 10px;
     position: relative;
     display: inline-block;
-    background-color: #71cedf;
+    background-color: #d4efdf;
     padding: 10px;
     color: #ffffff;
 }
@@ -96,20 +92,16 @@ nav a {
     position: relative;
     display: inline-block;
     margin-top: 20px;
-    transition: width 2s, height 2s, transform 2s;
+    color: #acefff;
 }
   
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #456567;
+    /*background-color: #456567;*/
     margin-top: 20px;
 }
 
-.dropdown:hover {
-    transform: rotate(720deg);
-}
-  
 .dropdown:hover .dropdown-content {
     display: block;
 }
